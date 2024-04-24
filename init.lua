@@ -109,6 +109,28 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 -- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
+-- utility function to watch a file for changes
+local w = vim.loop.new_fs_event()
+
+---@diagnostic disable-next-line: unused-local
+local function on_change(err, fname, status)
+  vim.api.nvim_command 'colorscheme pywal'
+end
+
+function watch_file(fname)
+  local fullpath = vim.api.nvim_call_function('fnamemodify', { fname, ':p' })
+  ---@diagnostic disable-next-line: need-check-nil
+  w:start(
+    fullpath,
+    {},
+    vim.schedule_wrap(function(...)
+      on_change(...)
+    end)
+  )
+end
+
+vim.api.nvim_command "command! -nargs=1 Watch call luaeval('watch_file(_A)', expand('<args>'))"
+
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
@@ -681,6 +703,7 @@ require('lazy').setup({
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       vim.cmd.colorscheme 'pywal'
+      watch_file '~/.cache/wal/colors'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
