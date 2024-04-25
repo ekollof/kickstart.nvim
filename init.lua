@@ -25,6 +25,11 @@ vim.o.hidden = true -- Do not save when switching buffers
 vim.o.breakindent = true -- Enable break indent
 vim.o.backup = false -- Disable Backup
 vim.o.swapfile = false -- Don't create Swap Files
+if vim.g.neovide then
+  vim.o.guifont = 'Berkeley Mono:h12'
+  vim.g.neovide_transparency = 0.8
+  vim.g.neovide_cursor_vfx_mode = 'pixiedust'
+end
 
 -- Make line numbers default
 vim.opt.number = true
