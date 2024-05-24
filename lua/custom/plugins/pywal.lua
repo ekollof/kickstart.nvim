@@ -45,6 +45,14 @@ local M = {
       require('pywal').setup()
     end,
   },
+  {'xiyaowong/transparent.nvim',
+    config = function()
+      require("transparent").setup({})
+
+      -- Toggle transparency
+      vim.keymap.set('n', '<leader>tt', '<CMD>:TransparentToggle<cr><CMD>:colorscheme pywal<cr>')
+    end,
+  }
 }
 
 -- check if pywal actually exists first. Otherwise, use default colorscheme.
