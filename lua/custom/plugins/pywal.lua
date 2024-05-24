@@ -57,9 +57,8 @@ local M = {
 
 -- check if pywal actually exists first. Otherwise, use default colorscheme.
 local colorfile = os.getenv("HOME") .. '/.cache/wal/colors'
-local fileexists = io.open(colorfile, "r")
 
-if fileexists ~= nil then -- we have pywal
+if vim.uv.fs_stat(colorfile) then -- we have pywal
   return M
 else
   return
