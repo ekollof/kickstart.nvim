@@ -1,4 +1,3 @@
-
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -28,9 +27,12 @@ vim.o.backup = false -- Disable Backup
 vim.o.swapfile = false -- Don't create Swap Files
 if vim.g.neovide then
   vim.o.guifont = 'Berkeley Mono:h12'
-  vim.g.neovide_transparency = 0.8
+  vim.g.neovide_transparency = 0.9
   vim.g.neovide_cursor_vfx_mode = 'pixiedust'
 end
+
+-- Turn tabs into spaces
+vim.opt.expandtab = true
 
 -- Make line numbers default
 vim.opt.number = true
@@ -87,4 +89,3 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
-
