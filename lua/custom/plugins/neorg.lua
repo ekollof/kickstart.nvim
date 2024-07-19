@@ -15,7 +15,7 @@ local M = {
           ['core.defaults'] = {},
           ['core.concealer'] = {
             config = {
-              icon_preset = 'varied',
+              icon_preset = 'diamond',
             },
           }, -- icons
           ['core.keybinds'] = {}, -- default keybinds
@@ -25,6 +25,8 @@ local M = {
             },
           }, -- Completion with nvim-cmp
           ['core.journal'] = {},
+          ['core.tempus'] = {},
+          ['core.pivot'] = {},
           ['core.dirman'] = {
             config = {
               workspaces = {

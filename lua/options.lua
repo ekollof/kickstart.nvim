@@ -25,6 +25,7 @@ vim.o.hidden = true -- Do not save when switching buffers
 vim.o.breakindent = true -- Enable break indent
 vim.o.backup = false -- Disable Backup
 vim.o.swapfile = false -- Don't create Swap Files
+vim.o.foldlevelstart = 6
 if vim.g.neovide then
   vim.o.guifont = 'Berkeley Mono:h12'
   vim.g.neovide_transparency = 0.9
