@@ -37,11 +37,11 @@ map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- [[ BARBAR ]]
 -- Move to previous/next
-map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', { noremap = true, silent = true, desc = "Previous buffer" })
-map('n', '<A-.>', '<Cmd>BufferNext<CR>', { noremap = true, silent = true, desc = "Next buffer" })
+map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', { noremap = true, silent = true, desc = 'Previous buffer' })
+map('n', '<A-.>', '<Cmd>BufferNext<CR>', { noremap = true, silent = true, desc = 'Next buffer' })
 -- Re-order to previous/next
-map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', { noremap = true, silent = true, desc = "Move buffer to previous" })
-map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', { noremap = true, silent = true, desc = "Move buffer to next" })
+map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', { noremap = true, silent = true, desc = 'Move buffer to previous' })
+map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', { noremap = true, silent = true, desc = 'Move buffer to next' })
 -- Goto buffer in position...
 map('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', { noremap = true, silent = true })
 map('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', { noremap = true, silent = true })
@@ -77,7 +77,6 @@ map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', { noremap = true, si
 -- Other:
 -- :BarbarEnable - enables barbar (enabled by default)
 -- :BarbarDisable - very bad command, should never be used
-
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`

@@ -1,4 +1,3 @@
-
 -- utility function to watch a file for changes
 --
 local w = vim.uv.new_fs_event()
@@ -45,24 +44,24 @@ local M = {
       require('pywal').setup()
     end,
   },
-  {'xiyaowong/transparent.nvim',
+  {
+    'xiyaowong/transparent.nvim',
     config = function()
-      require("transparent").setup({})
+      require('transparent').setup {}
 
       -- Toggle transparency
       vim.keymap.set('n', '<leader>tt', '<CMD>:TransparentToggle<cr><CMD>:colorscheme pywal<cr>')
     end,
-  }
+  },
 }
 
 -- check if pywal actually exists first. Otherwise, use default colorscheme.
-local colorfile = os.getenv("HOME") .. '/.cache/wal/colors'
+local colorfile = os.getenv 'HOME' .. '/.cache/wal/colors'
 
 if vim.uv.fs_stat(colorfile) then -- we have pywal
   return M
 else
-  return
-  { -- You can easily change to a different colorscheme.
+  return { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
     --

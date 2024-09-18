@@ -29,8 +29,8 @@ local M = {
             config = {
               workspaces = {
                 notes = '~/Nextcloud/Notes',
+                default_workspace = 'notes',
               },
-              default_workspace = 'notes',
             },
             ['core.tangle'] = {},
           },

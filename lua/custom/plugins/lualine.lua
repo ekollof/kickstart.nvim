@@ -6,10 +6,10 @@ M = {
   config = function()
     require('lualine').setup {
       sections = {
-        lualine_a = {},
+        lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = { { 'filename', path = 1 } },
-        lualine_v = { get_status_icon, get_condition },
+        -- lualine_v = { get_status_icon, get_condition },
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
       },
